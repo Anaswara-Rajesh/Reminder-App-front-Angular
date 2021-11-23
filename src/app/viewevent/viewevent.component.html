@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>view Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse ">
+		<div class="container-fluid nav-style">
+			<div class="navbar-header">
+				<h2 style="color:white;">Welcome To Reminder App</h2>
+
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a routerLink="/dashboard">HOME</a></li>
+				<li><a routerLink="/viewevent">EVENTS</a></li>
+				<li><a href=""> LOGOUT</a></li>
+
+			</ul>
+		</div>
+	</nav>
+
+	<section>
+
+		<div class="log_img">
+			<br><br><br>
+			<div class="box1">
+				<h1 style="text-align: center; font-size: 35px; font-family: Lucida Console;"> View Events </h1><br>
+
+				<div class="login">
+					<table style="border: 2px solid blue;" class="table table-dark ">
+						<thead style="font-size:large;">
+							<tr>
+								<th>Event</th>&nbsp;&nbsp;
+								<th>Date</th>&nbsp;&nbsp;
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let todayevents of todayevent">
+								<th>{{todayevents.event}}</th>&nbsp;&nbsp;
+								<th>{{todayevents.date}}</th>&nbsp;&nbsp;
+							</tr>
+						</tbody>
+					</table>
+					<br>
+				</div>
+
+				<!-- <button id="b1" style="width: 30%;" class="btn btn-danger " (click)="deleteAcc()">DELETE THIS
+					ACCOUND</button>
+				<app-deleteevent (onCancel)="onCancel()" (onDelete)="onDeleteAtParent($event)" [item]="userid">
+				</app-deleteevent> -->
+
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

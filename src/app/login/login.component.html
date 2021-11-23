@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Login Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		/* section
+    	{
+    		margin-top: -20px;
+    	}
+	</style> */
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse ">
+		<div class="container-fluid nav-style">
+			<div class="navbar-header">
+				<h2 style="color:white;">REMINDER APP</h2>
+
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a routerLink=""> LOGIN</a></li>
+				<li><a routerLink="/register">SIGN UP</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<section>
+		<div class="log_img">
+			<br><br><br>
+			<div class="box1">
+				<h1 style="text-align: center; font-size: 35px; font-family: Lucida Console;"> Login Form </h1><br>
+				<form [formGroup]=loginForm (ngSubmit)="login()">
+					<div class="login">
+						<div class="form-control">
+							<input type="text" class="form-control" name="userid" id="userid" formControlName="userid"
+								placeholder="User ID" aria-label="Recipient's userid" aria-describedby="basic-addon2">
+						</div>
+						<div *ngIf="(this.loginForm.get('userid')?.touched || this.loginForm.get('userid')?.dirty)&& this.loginForm.get('userid')?.errors"
+							class="error">invalid account number</div><br>
+						<div class="form-control">
+							<input type="password" class="form-control" name="password" id="password"
+								formControlName="password" placeholder="password" aria-label="password"
+								aria-describedby="basic-addon2">
+						</div>
+						<div *ngIf="(this.loginForm.get('password')?.touched || this.loginForm.get('password')?.dirty)&& this.loginForm.get('password')?.errors"
+							class="error">invalid password</div><br>
+						<div class="form-control">
+							<p style="color: red;" id="error"></p>
+						</div>
+
+						<div class="form-control login-btn-center addview">
+							<button type="submit" class="btn btn-primary">LOG IN</button>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;
+							<div class="register"><a routerLink="/register">SIGN UP</a></div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>
